@@ -1,0 +1,223 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	color: white;
+	letter-spacing: .02em;
+}
+body {
+	min-height: 100vh;
+}
+nav {
+	background-color: hsl(240, 100%, 40%);
+	padding-top: 20px;
+	position: sticky;
+	top: -20px;
+	overflow: hidden;
+}
+nav a {
+	text-decoration: none;
+	font-size: 1.2em;
+	float: left;
+	padding: 14px 25px;
+}
+nav a:hover {
+	color: hsl(30,100%, 50%);
+}
+nav a.nav-left {
+	margin-left: 7em;
+	font-weight: 900;
+}
+.nav-right{
+	float: right;
+	margin-right: 7em;
+}
+.icon {
+	display: none;
+}
+@media screen and (max-width: 996px) {
+	nav a {
+		display: none;
+	}	
+	nav a.nav-left {
+		margin-left: 0;
+		display: block;
+	}
+	.nav-right {
+		margin-right: 0;
+	}
+	nav a.icon {
+		display: block;
+		float: right;
+		position: absolute;
+		top: 20px;
+		right: 0;
+	}
+	nav.responsive a, .nav-right {
+		float: none;
+		display: block;
+	}
+	nav.responsive .nav-right {
+		text-align: center;
+	}
+}
+#welcome-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 80vh;
+	padding-bottom: 20px;
+	max-width: 100vw;
+	background-image: linear-gradient(hsl(240, 100%, 50%), hsl(270, 100%, 40%));
+}#welcome-section  p {	letter-spacing: .02em;	line-height: 2em;	font-size: 1.1em;}#welcome-section h1 {	font-size: 1.7em;	font-weight: 800;	color: hsl(60, 100%, 50%);}#welcome-section p, #welcome-section h1 {	width: 50%;	text-align: center;}
+#welcome-section a {	margin-top: 40px;
+	text-decoration: none;
+	border: 2px solid hsl(30, 100%, 50%);
+	padding: 14px 25px;
+	color: hsl(30, 100%, 50%);
+	font-weight: 900;
+	font-size: 1.1em;	transition: background .5s, color .5s;
+}
+#welcome-section a:hover {
+	background-color: hsl(30, 100%, 50%);
+	color: hsl(240, 100%, 50%);
+}@media screen and (max-width: 996px) {	#welcome-section p, #welcome-section h1 {		width: 96%;	}}
+#skills-section {
+	background-color: hsl(270, 100%, 50%);
+	display: flex;
+	justify-content: row;
+	flex-wrap: wrap;
+	padding: 40px 0;
+}
+#skills-section .skills-title {
+	flex-basis: 100%;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 25px;
+}
+
+#skills-section .skills-container {
+	flex-basis: 31%;
+	background: white;
+	color: black;
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 20px;
+	margin-left: 2%;
+}
+#skills-section .skills-container i {
+	width: 100%;
+	font-size: 50px;
+	color: hsl(270, 100%, 50%);
+}
+#skills-section .skills-container h3 {
+	font-size: 23px;
+	color: hsl(0, 0%, 20%);
+	padding: 10px 0;
+}
+	
+#skills-section .skills-container p, 
+#skills-section .skills-container h3 {
+	color: hsl(0, 0%, 15%);
+	line-height: 1.3rem;
+}
+#skills-section .skills-container i,
+#skills-section .skills-container h3 {
+	text-align: center;
+}
+@media screen and (max-width: 992px) {
+	#skills-section .skills-container {
+		flex-basis: 47%;
+	}
+}
+@media screen and (max-width: 768px) {
+	#skills-section .skills-container {
+		flex-basis: 96%;
+	}
+}
+
+#projects {
+	width: 96vw;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	padding-top: 10px;
+	letter-spacing: .02em;
+	line-height: 2em;
+}
+#projects section {
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+#projects .recent {
+	font-size: 1.3em;
+	color: hsl(270, 100%, 50%);
+}
+#projects img {
+	width: 50%;
+	float: left;
+	height: auto;
+}
+#projects h3 {
+	color: hsl(270, 100%, 50%);
+	font-size: 1.5em;
+	padding-top: 10%;
+}
+#projects p {
+	color: black;
+	padding: 2px 0 20px 0;
+}
+#projects a {
+	color: black;
+	padding: 14px 20px;
+	border: solid hsl(270, 100%, 50%);
+	text-decoration: none;
+}
+#projects a:hover {
+	background-color: hsl(270, 100%, 50%);
+	color: hsl(30, 100%, 50%);
+}
+@media screen and (max-width: 800px) {
+	#projects img {
+		float: none;
+		width: 90vw;
+	}
+	#projects h3 {
+		padding: 0;
+	}
+}
+footer {
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
+	background-color: blue;
+}.footer-container {
+	text-align: left;
+}
+footer h4 {
+	font-size: 2.5em;
+	color: white;
+}
+footer p{
+	color: white;
+	text-align: left;
+}
+footer a{
+	color: orange;
+	font-weight: 700;
+	word-break: break-all;
+	text-decoration: none;
+}
+footer a:hover{
+	text-decoration: underline;
+}
+@media screen and (max-width: 500px) {
+	footer {
+		align-items: flex-start;
+		padding: 20px;
+	}
+}

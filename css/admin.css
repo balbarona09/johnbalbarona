@@ -1,0 +1,648 @@
+/* Reset Start */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+/* Reset End */
+
+/* Login And Forgot Password Page Start*/
+.login-container {
+	width: 30vw;
+	margin: auto;
+	margin-top: 20vh;
+	padding: 20px;
+	box-shadow: 3px 3px 12px 5px hsl(0, 0%, 50%);
+}
+.login-title-container {
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+}
+.login-textbox,
+.login-button {
+	width: 100%;
+	height: 35px;
+}
+.login-textbox {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+.forgot-password-link {
+	display: inline-block;
+	margin: 5px 0;
+	text-decoration: none;
+}
+.forgot-password-link:hover {
+	border-bottom: 1px solid;
+	padding-bottom: 2px;
+}
+.login-button {
+	width: 100%;
+	height: 35px;
+	background-color: hsl(220, 100%, 50%);
+	color: white;
+	border: none;
+	font-size: 18px;
+	cursor: pointer;
+}
+.forgot-password-note {
+	padding: 6px;
+	line-height: 1.4rem;
+}
+.forgot-password-note span:first-child {
+	color: blue;
+}
+.login-link-container {
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.disabled-link {
+	pointer-events: none;
+	color: hsl(0, 0%, 50%);
+}
+
+/* Modal Start */
+.login-modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto;
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4);
+}
+.login-modal-content {
+	background-color: #fefefe;
+	margin: 10% auto;
+	border: 1px solid #888;
+	width: 40%;
+	border-radius: 10px;
+}
+.login-modal-header {
+	color: hsl(120, 100%, 30%);
+	font-weight: 900;
+	font-size: 25px;
+	padding: 20px;
+	border-bottom: 1px solid hsl(0, 0%, 80%);
+}
+
+.login-modal-body {
+	padding: 30px 20px;
+}
+
+.login-modal-footer {
+	padding: 20px;
+	border-top: 1px solid hsl(0, 0%, 80%);
+}
+.login-modal-footer a {
+	background: hsl(0, 0%, 50%);
+	padding: 12px;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+}
+/* Modal End */
+
+@media screen and (max-width: 1024px) {
+	.login-container {
+		width: 50vw;
+	}
+	.login-modal-content {
+		width: 60vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.login-container {
+		width: 70vw;
+	}
+	.login-modal-content {
+		width: 80vw;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.login-container {
+		width: 95vw;
+	}
+	.login-modal-content {
+		width: 98vw;
+	}
+}
+/* Login and Forgot Password Page End*/
+
+/* Alert Start */
+.alert {
+	display: none;
+	margin: 5px 0;
+	padding: 15px 10px;
+	border-radius: 8px;
+	font-size: 15px;
+}
+.alert-danger {
+	border: 1px solid hsl(0, 100%, 80%);
+	background: hsl(0, 100%, 90%);
+	color: hsl(0, 100%, 10%);
+}
+.alert-success {
+	border: 1px solid hsl(145, 60%, 80%);
+	background: hsl(145, 60%, 90%);
+	color: hsl(145, 60%, 10%);
+}
+/* Alert End */
+
+/* Loader Start */
+.loader-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 3;
+	background-color: hsla(0, 0%, 50%,.5);
+}
+.loader {
+	border: 16px solid #f3f3f3;
+	border-top: 16px solid #3498db;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+.loader-hide {
+	display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Loader End */
+
+/* Sidebar Start */
+.sidebar {
+	width: 270px;
+	background-color: hsl(220, 100%, 50%);
+	position: fixed;
+	height: 100vh;
+	overflow-y: scroll;
+	z-index: 2;
+}
+.sidebar .logo {
+	width: 200px;
+	height: auto;
+	margin: auto;
+	cursor: pointer;
+	display: flex;
+	padding: 20px 0;
+}
+.sidebar .item {
+	display: block;
+	color: hsl(0, 100%, 100%);
+	padding: 16px;
+	text-decoration: none;
+	font-weight: 700;
+}
+.float-right {
+	float: right;
+}
+.sidebar .item.active {
+	background-color: hsl(30, 100%, 50%);
+}
+.sidebar .item:hover:not(.active) {
+	background-color: hsl(0, 0%, 50%);
+}
+.sidebar .close-btn {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: none;
+	border: none;
+	color: hsl(0, 0%, 85%);
+	font-size: 40px;
+	cursor: pointer;
+	display: none;
+}
+
+/* Sidebar Collapse Start */
+.sidebar .collapse-content {
+	padding-top: 10px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+.sidebar .callapse-content-item {
+	display: block;
+	padding: 10px;
+	font-weight: 500;
+	font-size: 14px;
+}
+/* Sidebar Collapse End */
+.main-content {
+	margin-left: 270px;
+	background: hsl(0, 0%, 90%);
+	min-height: 100vh;
+}
+@media screen and (max-width: 992px) {
+	.sidebar {
+		width: 0;
+		transition: .5s;
+	}
+	.sidebar-270px {
+		width: 270px;
+	}
+	.sidebar-0px {
+		width: 0;
+	}
+	.sidebar .close-btn {
+		display: block;
+	}
+	.main-content {
+		margin-left: 0;
+	}
+}
+/* Sidebar End */
+
+/* Topbar Start */
+.topbar {
+	background-color: hsl(220, 100%, 50%);
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.topbar .menu-btn {
+	visibility: hidden;
+	background-color: hsl(220, 100%, 50%);
+	color: white;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+	.topbar .menu-btn {
+		visibility: visible;
+	}
+}
+
+/* Dropdown Start*/
+.topbar .dropdown {
+	position: relative;
+	display: inline-block;
+}
+.topbar .dropdown .dropdown-btn {
+	background-color: hsl(0, 0%, 50%);
+	color: white;
+	padding: 12px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	border-radius: 8px;
+}
+.topbar .dropdown .dropdown-btn:hover, .topbar .dropdown .dropdown-btn:focus {
+	background-color: hsl(0, 0%, 40%);
+}
+.topbar .dropdown .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: hsl(0, 0%, 100%);
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px hsla(0, 0%, 0%, .2);
+	z-index: 1;
+	border-radius: 8px;
+	padding: 10px 0;
+}
+.topbar .dropdown .dropdown-content .item {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.topbar .dropdown .dropdown-content .item:hover {
+	background-color: #ddd;
+}
+/* Dropdown End*/
+
+/* Topbar End */
+
+/* Form Start */
+.form-container {
+	background: white;
+	margin: 20px 40px;
+	border: 1px solid hsl(0, 0%, 75%);
+	padding: 10px 0;
+	border-radius: 8px;
+}
+.form-title-container {
+	padding: 15px;
+	border-bottom: 1px solid hsl(0, 0%, 75%);
+}
+.form-title {
+	font-size: 25px;
+	font-weight: 700;
+}
+.form {
+	display: grid;
+	grid-template-columns: 49% 49%;
+	justify-content: space-between;
+	padding: 15px;
+}
+.form-label {
+	color: hsl(0, 0%, 30%);
+	display: block;
+	padding: 5px;
+}
+.form-control-container {
+	margin-bottom: 20px;
+}
+.form-control, .form-textarea, .form-file {
+	display: block;
+	width: 100%;
+	border-radius: 8px;
+	height: 40px;
+	border: 1px solid hsl(0, 0%, 75%);
+	outline: none;
+	padding-left: 10px;
+	font-size: 16px;
+}
+.form-control:focus, .form-textarea:focus {
+	box-shadow: 0 0 10px hsl(220, 100%, 50%);
+}
+.form-textarea {
+	height: 80px;
+	padding: 10px;
+}
+.form-file {
+	padding-left: 0;
+}
+.form-file::file-selector-button {
+	height: 100%;
+	border: none;
+	cursor: pointer;
+	background: hsl(0, 0%, 92%);
+}
+.form-file::file-selector-button:hover {
+	background: hsl(0, 0%, 80%);
+}
+.form-submit {
+	padding: 12px 15px;
+	background: hsl(220, 100%, 50%);
+	border: none;
+	color: white;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .2s;
+	letter-spacing: 1px;
+}
+.form-submit:hover {
+	background: hsl(230, 100%, 50%);
+}
+.form-alert-container {
+	margin: 20px 40px;
+}
+@media screen and (max-width: 992px) {
+	.form {
+		grid-template-columns: 100%;
+	}
+	.form-container {
+		margin: 20px 10px;
+	}
+	.form-alert-container {
+		margin: 20px 10px;
+	}
+}
+/* Form End */
+
+/* Table Start */
+.table-container {
+	background: white;
+	margin: 20px 40px;
+	border: 1px solid hsl(0, 0%, 75%);
+	padding: 10px;
+	border-radius: 8px;
+	overflow-x: auto;
+}
+.manage-table {
+	width: 100%;	
+}
+.manage-table, .manage-table td, .manage-table th{
+	border: 1px solid hsl(0, 0%, 80%);
+	border-collapse: collapse;
+	padding: 8px;
+	text-align: center;
+}
+.manage-table tr:nth-child(even), .manage-table tr:hover {
+	background: hsl(0, 0%, 95%);
+}
+.table-container .limit {
+	margin: 5px 0;
+	padding: 5px;
+}
+.entries-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 0;
+}
+.table-container .previous-btn, .table-container .next-btn {
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid hsl(0, 0%, 60%);
+	color: hsl(0, 0%, 60%);
+	background: none;
+}
+.table-container .previous-btn:enabled, .table-container .next-btn:enabled {
+	border: 1px solid hsl(0, 0%, 40%);
+	color: hsl(0, 0%, 40%);
+	cursor: pointer;
+}
+.table-container .previous-btn:enabled:hover, .table-container .next-btn:enabled:hover {
+	background: hsl(0, 0%, 50%);
+	color: white;
+}
+.table-container .edit-btn, .table-container .delete-btn {
+	padding: 8px 10px;
+	margin: 0 3px;
+	color: white;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.table-container .edit-btn {
+	border: 1px solid hsl(220, 100%, 50%);
+	background: hsl(220, 100%, 45%);
+}
+.table-container .edit-btn:hover {
+	background: hsl(230, 100%, 45%);
+}
+.table-container .delete-btn {
+	border: 1px solid hsl(0, 100%, 46%);
+	background: hsl(0, 100%, 43%);
+}
+.table-container .delete-btn:hover {
+	background: hsl(0, 100%, 40%);
+}
+.table-container .thumbnail {
+	width: 100px;
+	height: auto;
+}
+@media screen and (max-width: 992px) {
+	.table-container {
+		margin: 20px 10px;
+	}
+}
+
+/* Edit Modal and Delete Modal Start */
+.edit-modal, .delete-modal {
+	position: fixed;
+	z-index: 5;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto;
+	background-color: hsla(0, 0%, 0%, .4);
+	display: none;
+}
+.edit-modal-content, .delete-modal-content {
+	background: white;
+	width: 50%;
+	margin: 5% auto;
+}
+.edit-modal-header, .delete-modal-header {
+	border-bottom: 1px solid hsl(0, 0%, 80%);
+	padding: 20px;
+	font-size: 22px;
+}
+.edit-modal-body, .delete-modal-body {
+	padding: 20px;
+}
+.edit-modal-footer, .delete-modal-footer {
+	padding: 20px;
+	border-top: 1px solid hsl(0, 0%, 80%);
+}
+.edit-modal .form-submit, .delete-modal .form-submit {
+	margin-top: 10px;
+}
+.delete-modal .form-submit {
+	background: hsl(0, 100%, 40%);
+}
+.edit-modal .close, .delete-modal .close {
+	background: hsl(0, 0%, 60%);
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+.edit-modal .close:hover, .delete-modal .close:hover {
+	background: hsl(0, 0%, 40%);
+}
+@media screen and (max-width: 992px) {
+	.edit-modal-content, .delete-modal-content {
+		width: 90%;
+		margin: 10% auto;
+	}
+}
+/* Edit Modal and Delete Modal End */
+
+/* Manage Table End */
+
+/* Dashboard Start */
+.dashboard-container {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 40px;
+}	
+.dashboard-item {
+	background: white;
+	flex-basis: 30%;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 0 10px hsl(0, 0%, 50%);
+	margin-bottom: 20px;
+}
+.dashboard-item-title {
+	padding: 20px;
+	font-weight: 500;
+}
+.dashboard-item-value {
+	padding: 10px 20px;
+	font-weight: 700;
+	font-size: 30px;
+	padding-bottom: 40px;
+}
+@media screen and (max-width: 992px) {
+	.dashboard-item {
+		flex-basis: 90%;
+	}
+}
+/* Dashboard End */
+
+/* Profile Start */
+.profile-container {
+	margin: 20px 40px;
+}
+.profile-item {
+	background: white;
+	box-shadow: 0 0 10px hsl(0, 0%, 80%);
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+.profile-item-title {
+	border-bottom: 1px solid hsl(0, 0%, 80%);
+	padding: 20px;
+	font-size: 20px;
+}
+.profile-form {
+	padding: 20px;
+}
+.profile-form-container {
+	margin-bottom: 10px;
+}
+.profile-container .form-submit {
+	padding: 8px 10px;
+	font-size: 14px;
+}
+.change-email-note {
+	padding: 15px 5px;
+}
+.change-email-note span:first-child {
+	color: blue;
+}
+.change-email-note span:nth-child(2) {
+	font-weight: 700;
+}
+.change-email-label {
+	color: black;
+	font-weight: 700;
+}
+.resend-code-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+.resend-disabled {
+	color: hsla(220 ,100%, 50%, .5);
+}
+.change-email-btn, .resend-code-btn {
+	text-decoration: none;
+}
+.change-email-btn:hover, .resend-code-btn:hover:not(.resend-disabled) {
+	text-decoration: underline;
+}
+@media screen and (max-width: 992px) {
+	.profile-container {
+		margin: 20px 10px;
+	}
+}
