@@ -1,5 +1,5 @@
 # johnbalbarona
-This is my personal portfolio website, which can also be seen in https://johnbalbarona.tech/
+This is my personal portfolio website, which can also be seen in https://portfolio.johnbalbarona.tech/
 <h2>Language Used</h2>
 <ul>
   <li>PHP</li>
